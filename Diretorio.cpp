@@ -135,19 +135,19 @@ void Diretorio::inserirChave(int chave){
             cout<< "Quatidade de chaves no balde: " << baldes[posicao]->getQtdChaves() << endl;
             if(!(baldes[posicao]->isFull()))
             {
-                  baldes[posicao]->inserirChave(toBinary(chave, bitsChave));
+                  baldes[posicao]->inserirChave(toBinary(chave, bitsChave), pow(2,profundidadeGlobal)>qtdBaldes);
                     qtdRegistros++;
             }
             else if (baldes[posicao]->getProfundidadeLocal() < this->profundidadeGlobal){
                 cout << "Dividindo balde" << endl;
                 dividirBalde(posicao, chave);
-                baldes[posicao]->inserirChave(toBinary(chave, bitsChave));
+                baldes[posicao]->inserirChave(toBinary(chave, bitsChave),pow(2,profundidadeGlobal)>qtdBaldes);
                 qtdRegistros++;
 
             }else{
                 cout << "Duplicando diretorio" << endl;
                 duplicarDiretorio(posicao,chave);
-                baldes[getPosicaoDiretorio(chave)]->inserirChave(toBinary(chave, bitsChave));
+                baldes[getPosicaoDiretorio(chave)]->inserirChave(toBinary(chave, bitsChave),pow(2,profundidadeGlobal)>qtdBaldes);
                 qtdRegistros++;
 
             }
@@ -157,15 +157,15 @@ void Diretorio::inserirChave(int chave){
 }
 
 void Diretorio::dividirBalde(int posicaoBaldeCheio, int chave){
-    cout<< "PROFUNDIDADE GLOBAL: " <<profundidadeGlobal << endl;
-    cout << "Posicao balde cheio: " << posicaoBaldeCheio<< endl;
+    // cout<< "PROFUNDIDADE GLOBAL: " <<profundidadeGlobal << endl;
+    // cout << "Posicao balde cheio: " << posicaoBaldeCheio<< endl;
     //Criando um novo balde
     Balde *novoBalde = new Balde(this->tamBaldes,this->profundidadeGlobal);
 
     int posicaoBaldeNovo;
 
     //Obtendo outra posição que aponta para o balde cheio guardando o novo balde nessa posição
-    cout << "Qtd baldes: " << qtdBaldes << endl;
+    // cout << "Qtd baldes: " << qtdBaldes << endl;
     if((posicaoBaldeCheio ==0) || ((posicaoBaldeCheio < qtdBaldes-1) && ( baldes[posicaoBaldeCheio] == baldes[posicaoBaldeCheio+1])))
         posicaoBaldeNovo = posicaoBaldeCheio+1;
     else 
@@ -175,7 +175,7 @@ void Diretorio::dividirBalde(int posicaoBaldeCheio, int chave){
 
     Balde *baldeNovo = baldes[posicaoBaldeNovo];
 
-    cout << "Posicao balde novo: " << posicaoBaldeNovo << endl;
+    // cout << "Posicao balde novo: " << posicaoBaldeNovo << endl;
 
     //Obtendo balde cheio
 
@@ -189,16 +189,16 @@ void Diretorio::dividirBalde(int posicaoBaldeCheio, int chave){
     //Ajustando poteiros e dLocal e redistribuindo as chaves
     for(int cont  = 0; cont<qtdChaves; cont++)
     {
-        cout << "CHAVE: " << chaves[i] << endl;
+        // cout << "CHAVE: " << chaves[i] << endl;
         //binario 2 digitos da chave
         string dBits =  chaves[i].substr(0,profundidadeGlobal);
         string binPosicao = toBinary(posicaoBaldeCheio,profundidadeGlobal);
-        cout << "dbITS: "<< dBits << "  Binario posicao balde cheio:  " << binPosicao << endl;
-        cout << "Balde para a chave" << chaves[i] << " : " << chaves[i].substr(0,this->profundidadeGlobal) << " = " << stoull(dBits,0,2)<<endl;
+        // cout << "dbITS: "<< dBits << "  Binario posicao balde cheio:  " << binPosicao << endl;
+        // cout << "Balde para a chave" << chaves[i] << " : " << chaves[i].substr(0,this->profundidadeGlobal) << " = " << stoull(dBits,0,2)<<endl;
 
         if(binPosicao != dBits){
             cout << "Removendo chave" << chaves[i] << endl;
-            baldeNovo->inserirChave(chaves[i]);
+            baldeNovo->inserirChave(chaves[i],profundidadeGlobal>qtdBaldes);
             baldeCheio->removeChave(i);
         }
         i++;
@@ -232,65 +232,17 @@ void Diretorio::duplicarDiretorio(int posicaoBaldeCheio, int chave){
     
     for(int i = tamanho-1, j=(tamanho/2)-1; i>0; i-=2,j--)
     {
-        //int deslocado = i >> 1;
         cout << "Balde[" <<i << "]" <<  "aponta para balde " << "Balde[" <<j<< "]" <<  endl;
-        // if(i<tamanho/2){
-        //     cout << "Chave balde i" << baldes[i]->getChaves()[0]<< endl;
-        //     cout << "Chave balde i" << baldes[j]->getChaves()[0]<< endl;
-
-        // }
-       // cout << "Tamanho/2-1: " << (tamanho/2)-1 << endl;
-        //baldes[i]->setProfundidadeLocal(baldes[i]->getProfundidadeLocal()+1);
-        //if((i-1)>0)
+       
         baldes[i] = baldes[j];
         baldes[i-1] = baldes[j];
 
-        // if(i<tamanho/2)
-        // cout << "Chave balde i após arrumado" << baldes[i]->getChaves()[0]<< endl;
+
 
     }
     dividirBalde(posicaoBaldeCheio,chave);
 
-    // cout << "Posicao balde cheio apos duplicação: " << posicaoBaldeCheio << endl;
-    // int posicaoBaldeNovo;
-
-    // //Obtendo outra posição que aponta para o balde cheio guardando o novo balde nessa posição
-    // if((posicaoBaldeCheio ==0) || ((posicaoBaldeCheio < qtdBaldes-1) && ( baldes[posicaoBaldeCheio] == baldes[posicaoBaldeCheio+1])))
-    //     posicaoBaldeNovo = posicaoBaldeCheio+1;
-    // else
-    //     posicaoBaldeNovo = posicaoBaldeCheio-1;
-
-    // cout << "Posicao balde novo: " << posicaoBaldeNovo << endl;
-
-    // baldes[posicaoBaldeNovo]= novoBalde;
-
-    // // Percorre as chaves do balde cheio removendo aquelas
-    // // Que não se encaixam mais nessa posição
-
-    // vector <string> chaves = baldes[posicaoBaldeCheio]->getChaves();
-
-    // for(int i =0; i<baldes[posicaoBaldeCheio]->getQtdChaves();i++)
-    // {
-    //     //1000 => 10
-    //     string chave =  chaves[i].substr(0,profundidadeGlobal);
-
-    //     //1 => 01
-    //     string chavePosicao = toBinary(posicaoBaldeCheio,pow(2,this->profundidadeGlobal));
-
-    //     //Se os d bits mais a esquerda desas chaves nesse balde não mais correspondem
-    //     //A chave dessa possicao, removemos e inserimos na posição correta
-    //     if(chave != chavePosicao){
-
-    //         cout << "Removendo chave " << chaves[i] << endl;
-    //        // cout << "i: " << i << endl;
-    //         baldes[posicaoBaldeCheio]->removeChave(i);
-
-    //         cout << "Posicao certa para essa chave: " << chave<< endl;
-    //         baldes[getPosicaoDiretorio(stoull(chaves[i],0,2))]->inserirChave(chaves[i]);
-    //       // cout << "Chave que ficou no lugar: " << baldes[posicaoBaldeCheio]->getChaves()[i] << endl;
-    //     }
-        
-    // }
+    
     baldes[posicaoBaldeCheio]->setProfundidadeLocal(baldes[posicaoBaldeCheio]->getProfundidadeLocal()+1);
     
     

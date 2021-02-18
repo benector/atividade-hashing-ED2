@@ -1,146 +1,84 @@
-Inserindo chave 0010
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[1]
-
-[0] 0010 [0]
-
-
-[1] 0010 [0]
-
-
-========================
-Inserindo chave 0100
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[1]
-
-[0] 0010 [1]
-
-     0100
-
-[1] 0010 [1]
-
-     0100
-
-========================
-Inserindo chave 1100
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 0010 [2]
-
-
-[01] 0100 [0]
-
-      1100
-
-[10] 0100 [0]
-
-      1100
-
-[11] 0100 [0]
-
-      1100
-
-========================
-Inserindo chave 1101
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 0010 [2]
-
-
-[01] 1101 [1]
-
-
-[10] 0100 [0]
-
-      1100
-
-[11] 1101 [1]
-
-
-========================
-Inserindo chave 0010
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 0010 [2]
-
-
-[01] 1101 [1]
-
-
-[10] 0100 [0]
-
-      1100
-
-[11] 1101 [1]
-
-
-========================
-Inserindo chave 1000
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 0010 [2]
-
-
-[01] 0100 [0]
-
-      1100
-
-[10] 1000 [1]
-
-
-[11] 1101 [1]
-
-
-========================
-Inserindo chave 0101
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 1100 [2]
-
-
-[01] 0100 [3]
-
-      0101
-
-[10] 1000 [1]
-
-
-[11] 1101 [1]
-
-
-========================
-Inserindo chave 0000
-====IMPRIMINDO DIRETORIO E BALDES====
-
-[2]
-
-[00] 1100 [0]
-
-      0000
-
-[01] 0100 [3]
-
-      0101
-
-[10] 1000 [1]
-
-
-[11] 1101 [1]
-
-
-========================
-Quantidade de chaves: 7
-Quantidade de chaves: 5
-Fator de carga: 0%
+Inserindo chave 01001
+Fator de carga: 33.3333
+Inserindo chave 00011
+Fator de carga: 66.6667
+Inserindo chave 11110
+Fator de carga: 100
+Inserindo chave 00100
+Fator de carga: 66.6667
+Inserindo chave 00001
+Fator de carga: 41.6667
+Inserindo chave 01100
+Fator de carga: 50
+Inserindo chave 10110
+Fator de carga: 58.3333
+Inserindo chave 01110
+Fator de carga: 66.6667
+Inserindo chave 10010
+Fator de carga: 75
+Inserindo chave 10000
+Fator de carga: 66.6667
+Inserindo chave 01001
+Fator de carga: 66.6667
+Inserindo chave 10001
+Fator de carga: 52.381
+Inserindo chave 10001
+Fator de carga: 52.381
+Inserindo chave 11011
+Fator de carga: 57.1429
+Inserindo chave 01001
+Fator de carga: 57.1429
+Inserindo chave 01011
+Fator de carga: 61.9048
+Inserindo chave 10011
+Fator de carga: 51.8519
+Inserindo chave 00110
+Fator de carga: 50
+Inserindo chave 11011
+Fator de carga: 50
+Inserindo chave 11100
+Fator de carga: 53.3333
+Quantidade de chaves: 16
+Quantidade de baldes: 10
+Inserindo chave 00000
+Fator de carga: 33.3333%
+Inserindo chave 00001
+Fator de carga: 66.6667%
+Inserindo chave 00010
+Fator de carga: 100%
+Inserindo chave 00011
+Fator de carga: 44.4444%
+Inserindo chave 00100
+Fator de carga: 33.3333%
+Inserindo chave 00101
+Fator de carga: 40%
+Inserindo chave 00110
+Fator de carga: 46.6667%
+Inserindo chave 00111
+Fator de carga: 38.0952%
+Inserindo chave 01000
+Fator de carga: 42.8571%
+Inserindo chave 01001
+Fator de carga: 47.619%
+Inserindo chave 01010
+Fator de carga: 52.381%
+Inserindo chave 01011
+Fator de carga: 50%
+Inserindo chave 01100
+Fator de carga: 54.1667%
+Inserindo chave 01101
+Fator de carga: 51.8519%
+Inserindo chave 01110
+Fator de carga: 55.5556%
+Inserindo chave 01111
+Fator de carga: 53.3333%
+Inserindo chave 10000
+Fator de carga: 56.6667%
+Inserindo chave 10001
+Fator de carga: 54.5455%
+Inserindo chave 10010
+Fator de carga: 57.5758%
+Inserindo chave 10011
+Fator de carga: 55.5556%
+Quantidade de chaves: 20
+Quantidade de baldes: 12

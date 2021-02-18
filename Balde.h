@@ -13,7 +13,7 @@ class Balde{
         Balde(int M, int profundidadeLocal);
         ~Balde();
         int getChave(int k);
-        void inserirChave(string chave);
+        void inserirChave(string chave, bool atualizar);
         void setCapacidade(int M);
         void setQtdChaves(int k);
         void setChaves(vector <string> chaves);
@@ -24,6 +24,7 @@ class Balde{
         void imprimirBalde();
         int getCapacidade();
         int getQtdChaves();
+        int atualizaPLocal(string chave1, string chave2);
         vector <string> getChaves();
         int getProfundidadeLocal();
         int getDBits();

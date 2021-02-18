@@ -29,37 +29,44 @@ Balde::~Balde(){
 
 }
 
-void Balde::inserirChave(string chave){
+int Balde::atualizaPLocal(string chave1, string chave2)
+{
+    int i =0;
+    while(i < chave1.length() && (chave1[i]==chave2[i]))
+    {
+        i++;
+    }
+    return i;
+}
+void Balde::inserirChave(string chave, bool atualizar){
     
-    // if(qtdChaves>0){
+    if(atualizar){
+         if(qtdChaves>0)
+        {
+            string c1;
+            string c2;
 
-    //     string c1;
-    //     string c2;
+            if(chave < chaves[qtdChaves-1])
+            {
+                c1= chave;
+                c2 = chaves[qtdChaves-1];
 
-    //     if(chave < chaves[qtdChaves-1])
-    //     {
-    //         c1= chave;
-    //         c2 = chaves[qtdChaves-1];
+            }else{
+                c1= chaves[qtdChaves-1];
+                c2 = chave ;
+            }
+            
 
-    //     }else{
-    //          c1= chaves[qtdChaves-1];
-    //          c2 = chave ;
-    //     }
-    //        //cout << "C1: " << c1 << " c2: " << c2 << endl;
+            int i =0;
 
-    //     int i =0;
-
-    //     while(i < c1.length() && (c1[i]==c2[i]))
-    //     {
-    //         i++;
-    //     }
-    //     // if(chaves[this->qtdChaves-1].substr(0,dBits) == chave.substr(0,dBits))
-    //     //     this->profundidadeLocal = dBits;
-    //     // else
-    //     //     this->profundidadeLocal = dBits-1;
-    //     profundidadeLocal = i;
-    // }
-    
+            while(i < c1.length() && (c1[i]==c2[i]))
+            {
+                i++;
+            }
+            profundidadeLocal = i;
+        }
+    }
+       
     this->chaves.push_back(chave);
     this->setQtdChaves(qtdChaves + 1);
     
