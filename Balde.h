@@ -16,9 +16,11 @@ class Balde{
         void inserirChave(string chave);
         void setCapacidade(int M);
         void setQtdChaves(int k);
+        void setChaves(vector <string> chaves);
         void setProfundidadeLocal(int val);
         void setDBits(int d);
         void removeChave(int i);
+        void calcularProfundidade();
         void imprimirBalde();
         int getCapacidade();
         int getQtdChaves();

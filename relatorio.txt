@@ -1,0 +1,146 @@
+Inserindo chave 0010
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[1]
+
+[0] 0010 [0]
+
+
+[1] 0010 [0]
+
+
+========================
+Inserindo chave 0100
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[1]
+
+[0] 0010 [1]
+
+     0100
+
+[1] 0010 [1]
+
+     0100
+
+========================
+Inserindo chave 1100
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 0010 [2]
+
+
+[01] 0100 [0]
+
+      1100
+
+[10] 0100 [0]
+
+      1100
+
+[11] 0100 [0]
+
+      1100
+
+========================
+Inserindo chave 1101
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 0010 [2]
+
+
+[01] 1101 [1]
+
+
+[10] 0100 [0]
+
+      1100
+
+[11] 1101 [1]
+
+
+========================
+Inserindo chave 0010
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 0010 [2]
+
+
+[01] 1101 [1]
+
+
+[10] 0100 [0]
+
+      1100
+
+[11] 1101 [1]
+
+
+========================
+Inserindo chave 1000
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 0010 [2]
+
+
+[01] 0100 [0]
+
+      1100
+
+[10] 1000 [1]
+
+
+[11] 1101 [1]
+
+
+========================
+Inserindo chave 0101
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 1100 [2]
+
+
+[01] 0100 [3]
+
+      0101
+
+[10] 1000 [1]
+
+
+[11] 1101 [1]
+
+
+========================
+Inserindo chave 0000
+====IMPRIMINDO DIRETORIO E BALDES====
+
+[2]
+
+[00] 1100 [0]
+
+      0000
+
+[01] 0100 [3]
+
+      0101
+
+[10] 1000 [1]
+
+
+[11] 1101 [1]
+
+
+========================
+Quantidade de chaves: 7
+Quantidade de chaves: 5
+Fator de carga: 0%

@@ -9,28 +9,36 @@
 class Diretorio{
     public:
         Diretorio();
-        Diretorio(int M);
+        Diretorio(int M,int B);
         ~Diretorio();
-        Balde buscarBalde(int k);
-        void alocarBalde(int inicio);
+        int buscarChave(string chave);
+        void alocarBalde(int inicio, int profundidade);
         void inserirBalde(Balde *balde);
-        void dividirBalde(map<string, Balde*>::iterator posicaoBaldeCheio, string chave);
-        void duplicarDiretorio();
+        void dividirBalde(int posicaoBaldeCheio, int chave);
+        void duplicarDiretorio(int posicaoBaldeCheio, int chave);
+        void juntarBaldes(int posicaoBaldeCheio);
         void setProfundidadeGlobal(int M);
         void setQtdBaldes(int k);
-        void inserirChave(string chave);
+        void inserirChave(int chave);
         void imprimirDiretorio();
+        void imprimeDiretorioSaida(ofstream &outfile);
         int getProfundidadeGlobal();
         int getQtdBaldes();
-        string getPosicaoDiretorio(string chave);
+        int getQtdRegistros();
+        int getPosicaoDiretorio(int chave);
+        void redistribuirChaves();
         string toBinary(int n, int B);
 
 
     private:
-        map <string, Balde*> baldes; 
+        map <int, Balde*> baldes; 
         int tamBaldes;
         int profundidadeGlobal;
         int qtdBaldes;
+        int bitsChave;
+        int qtdRegistros;
+        int fatorDeCarga;
+        
 
 };
 
